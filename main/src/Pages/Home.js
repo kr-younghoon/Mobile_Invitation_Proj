@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import Step1Form from './StepForm/Step1Form';
-import Step2Form from './StepForm/Step2Form';
-import Step3Form from './StepForm/Step3Form';
+import Step1Form from '../Home/Step1Form';
+import Step2Form from '../Home/Step2Form';
+import Step3Form from '../Home/Step3Form';
 
-const MultiStepForm = () => {
+const Home = () => {
     const [step, setStep] = useState(1);
 
     const nextStep = () => {
@@ -28,4 +28,4 @@ const MultiStepForm = () => {
     );
 };
 
-export default MultiStepForm;
+export default Home;
