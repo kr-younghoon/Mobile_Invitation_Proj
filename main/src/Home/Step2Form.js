@@ -1,9 +1,14 @@
+import RelationshipSelector from './Components/Input/RelationshipSelector';
+
 const Step2Form = () => {
     // Step 2의 폼 컴포넌트 내용을 구현
     return (
         <div>
-            <h1>\{name\}</h1>
-            {/* 폼 요소들을 추가 */}
+            <h1>
+                "name"청년과 <br />
+                어떤 사이인가요?
+            </h1>
+            <RelationshipSelector />
         </div>
     );
 };
