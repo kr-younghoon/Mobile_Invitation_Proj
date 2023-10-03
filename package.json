@@ -1,6 +1,0 @@
-{
-  "dependencies": {
-    "@dotlottie/player-component": "^2.7.0",
-    "lottie-react": "^2.4.0"
-  }
-}
