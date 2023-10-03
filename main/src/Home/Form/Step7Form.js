@@ -1,8 +1,3 @@
-// import Lottie from 'lottie-react';
-// import BibleIconData from '../Assets/bible.json';
-
-// import BibleIcon from '../Assets/BibleIcon';
-
 const Step7Form = () => {
     return (
         <>
@@ -17,7 +12,6 @@ const Step7Form = () => {
                 <br />
                 준비했어요!
             </h1>
-            {/* <BibleIcon /> */}
         </>
     );
 };
