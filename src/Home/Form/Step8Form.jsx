@@ -1,4 +1,4 @@
-const Step8Form = () => {
+const Step8Form = (props) => {
     return (
         <>
             <h1>
@@ -7,9 +7,9 @@ const Step8Form = () => {
                 소망합니다!
             </h1>
             <h1>
-                | Name | 님을
+                {props.userName} 님을
                 <br />
-                | Status | | Inviter |
+                {props.tag} {props.inviterName}
                 <br />
                 청년과 함께 11/5
                 <br />

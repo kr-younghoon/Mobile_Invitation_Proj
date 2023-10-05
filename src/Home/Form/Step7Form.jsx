@@ -1,10 +1,10 @@
-const Step7Form = () => {
+const Step7Form = (props) => {
     return (
         <>
             <h1>
                 마지막으로,
                 <br />
-                | Name |님을
+                {props.userName}님을
                 <br />
                 축복하기 위해
                 <br />

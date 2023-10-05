@@ -21,16 +21,23 @@ function Home() {
         setStep(step - 1);
     };
 
+    let inviterName = '김현아';
+    let userName = '김태래';
+    let tag = '💦킹받는';
+    let relationship = '애인';
+
     return (
         <div>
             {step === 1 && <Step1Form />}
-            {step === 2 && <Step2Form />}
-            {step === 3 && <Step3Form />}
-            {step === 4 && <Step4Form />}
-            {step === 5 && <Step5Form />}
+            {step === 2 && <Step2Form inviterName={inviterName} />}
+            {step === 3 && <Step3Form inviterName={inviterName} />}
+            {step === 4 && <Step4Form inviterName={inviterName} tag={tag} relationship={relationship} />}
+            {step === 5 && (
+                <Step5Form inviterName={inviterName} tag={tag} relationship={relationship} userName={userName} />
+            )}
             {step === 6 && <Step6Form />}
-            {step === 7 && <Step7Form />}
-            {step === 8 && <Step8Form />}
+            {step === 7 && <Step7Form userName={userName} />}
+            {step === 8 && <Step8Form inviterName={inviterName} userName={userName} tag={tag} />}
 
             <div>
                 {/* Step7에 대한 폼(로티에 대한 것 때문에 코드를 여기서 작성해야할꺼 같다.) */}
