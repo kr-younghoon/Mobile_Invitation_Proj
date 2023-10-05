@@ -1,4 +1,4 @@
-const RelationshipSelector = () => {
+function RelationshipSelector() {
     return (
         <>
             <form>
@@ -34,6 +34,6 @@ const RelationshipSelector = () => {
             </form>
         </>
     );
-};
+}
 
 export default RelationshipSelector;

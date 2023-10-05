@@ -1,6 +1,6 @@
 import RelationshipSelector from '../Components/Input/RelationshipSelector';
 
-const Step2Form = () => {
+function Step2Form() {
     // Step 2의 폼 컴포넌트 내용을 구현
     return (
         <div>
@@ -11,6 +11,6 @@ const Step2Form = () => {
             <RelationshipSelector />
         </div>
     );
-};
+}
 
 export default Step2Form;

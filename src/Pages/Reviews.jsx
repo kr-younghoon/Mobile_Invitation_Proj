@@ -1,4 +1,4 @@
-const Reviews = () => {
+function Reviews() {
     return (
         <>
             <h1>
@@ -8,6 +8,6 @@ const Reviews = () => {
             </h1>
         </>
     );
-};
+}
 
 export default Reviews;

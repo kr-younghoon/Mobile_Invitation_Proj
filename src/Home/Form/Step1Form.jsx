@@ -1,6 +1,6 @@
 import AskInviter from '../Components/Input/AskInviter';
 
-const Step1Form = () => {
+function Step1Form() {
     // Step 1의 폼 컴포넌트 내용을 구현
     return (
         <div>
@@ -14,6 +14,6 @@ const Step1Form = () => {
             <AskInviter />
         </div>
     );
-};
+}
 
 export default Step1Form;

@@ -1,4 +1,4 @@
-const PersonTraitsSelector = () => {
+function PersonTraitsSelector() {
     return (
         <>
             <label>
@@ -48,6 +48,6 @@ const PersonTraitsSelector = () => {
             </label>
         </>
     );
-};
+}
 
 export default PersonTraitsSelector;

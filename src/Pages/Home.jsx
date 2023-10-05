@@ -10,7 +10,7 @@ import Step8Form from '../Home/Form/Step8Form';
 import Lottie from 'lottie-react';
 import DUMMY from '../Home/Assets/bible.json';
 
-const Home = () => {
+function Home() {
     const [step, setStep] = useState(1);
 
     const nextStep = () => {
@@ -40,6 +40,6 @@ const Home = () => {
             </div>
         </div>
     );
-};
+}
 
 export default Home;

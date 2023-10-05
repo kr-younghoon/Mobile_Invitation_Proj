@@ -1,4 +1,4 @@
-const PlacesAndTimes = () => {
+function PlacesAndTimes() {
     return (
         <>
             <h1>
@@ -29,6 +29,6 @@ const PlacesAndTimes = () => {
             <button>네이버 지도로 열기</button>
         </>
     );
-};
+}
 
 export default PlacesAndTimes;
