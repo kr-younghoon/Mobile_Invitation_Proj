@@ -101,8 +101,11 @@ function Home() {
             <div>
                 {/* Step7에 대한 폼(로티에 대한 것 때문에 코드를 여기서 작성해야할꺼 같다.) */}
                 {step === 7 && <Lottie animationData={DUMMY} />}
-                {step > 1 && <button onClick={prevStep}>이전 단계</button>}
-                {step < 8 && <button onClick={nextStep}>다음 단계</button>}
+                {step > 2 && <button onClick={prevStep}>이전 단계</button>}
+                {/* {step < 8 && <button onClick={nextStep}>다음 단계</button>} */}
+                {step > 4 && step < 8 && (
+                    <button onClick={nextStep}>다음 단계</button>
+                )}
             </div>
         </div>
     );

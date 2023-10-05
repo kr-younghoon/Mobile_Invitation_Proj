@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 const Step8Form = (props) => {
     return (
         <>
@@ -17,7 +19,9 @@ const Step8Form = (props) => {
                 <br />
                 기대하겠습니다.
                 <br />
-                <button>방명록 작성하기</button>
+                <Link to="/reviews">
+                    <button>방명록 작성하기</button>
+                </Link>
             </h1>
         </>
     );

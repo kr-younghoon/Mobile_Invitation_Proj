@@ -13,7 +13,7 @@ const Step5Form = (props) => {
                 <br />
                 청년의 {props.relationship}인
                 <br />
-                {props.userName}
+                {props.userName}님을
                 <br />꼭 만나고 싶어요!
             </h1>
         </>
