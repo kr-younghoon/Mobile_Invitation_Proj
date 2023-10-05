@@ -7,8 +7,6 @@ import Step5Form from '../Home/Form/Step5Form';
 import Step6Form from '../Home/Form/Step6Form';
 import Step7Form from '../Home/Form/Step7Form';
 import Step8Form from '../Home/Form/Step8Form';
-import Lottie from 'lottie-react';
-import DUMMY from '../Home/Assets/bible.json';
 
 function Home() {
     const [step, setStep] = useState(1);
@@ -16,6 +14,14 @@ function Home() {
     const [selectTag, setSelectTag] = useState({});
     const [selectedKeywords, setSelectedKeywords] = useState([]);
     const [usernameState, setUsernameState] = useState({});
+
+    let inviterName = caller.step1Data;
+    let userName = usernameState;
+    let tag =
+        selectedKeywords[
+            Math.floor(Math.random() * (selectedKeywords.length - 1))
+        ];
+    let relationship = selectTag.step2Data;
 
     const nextStep = () => {
         setStep(step + 1);
@@ -46,14 +52,6 @@ function Home() {
         setUsernameState(name);
         nextStep();
     };
-
-    let inviterName = caller.step1Data;
-    let userName = usernameState;
-    let tag =
-        selectedKeywords[
-            Math.floor(Math.random() * (selectedKeywords.length - 1))
-        ];
-    let relationship = selectTag.step2Data;
 
     return (
         <div>
@@ -100,7 +98,7 @@ function Home() {
 
             <div>
                 {/* Step7에 대한 폼(로티에 대한 것 때문에 코드를 여기서 작성해야할꺼 같다.) */}
-                {step === 7 && <Lottie animationData={DUMMY} />}
+                {/* {step === 7 && <Lottie animationData={DUMMY} />} */}
                 {step > 2 && <button onClick={prevStep}>이전 단계</button>}
                 {/* {step < 8 && <button onClick={nextStep}>다음 단계</button>} */}
                 {step > 4 && step < 8 && (
