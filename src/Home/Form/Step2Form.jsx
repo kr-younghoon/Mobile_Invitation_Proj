@@ -5,7 +5,7 @@ function Step2Form(props) {
     return (
         <div>
             <h1>
-                {props.inviterName}청년과 <br />
+                {props.inviterName} 청년과 <br />
                 어떤 사이인가요?
             </h1>
             <RelationshipSelector />
