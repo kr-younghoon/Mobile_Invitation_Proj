@@ -14,6 +14,8 @@ function Home() {
     const [step, setStep] = useState(1);
     const [caller, setCaller] = useState({});
     const [selectTag, setSelectTag] = useState({});
+    const [selectedKeywords, setSelectedKeywords] = useState([]);
+    const [usernameState, setUsernameState] = useState({});
 
     const nextStep = () => {
         setStep(step + 1);
@@ -35,9 +37,22 @@ function Home() {
         console.log(selectTag.step2DataS);
     };
 
+    const onKeywordsReceived = (keywords) => {
+        setSelectedKeywords(keywords);
+        nextStep();
+    };
+
+    const onUserNameReceived = (name) => {
+        setUsernameState(name);
+        nextStep();
+    };
+
     let inviterName = caller.step1Data;
-    let userName = '김현아';
-    let tag = '💦킹받는';
+    let userName = usernameState;
+    let tag =
+        selectedKeywords[
+            Math.floor(Math.random() * (selectedKeywords.length - 1))
+        ];
     let relationship = selectTag.step2Data;
 
     return (
@@ -51,9 +66,15 @@ function Home() {
                     inviterName={inviterName}
                 />
             )}
-            {step === 3 && <Step3Form inviterName={inviterName} />}
+            {step === 3 && (
+                <Step3Form
+                    onKeywordsReceived={onKeywordsReceived}
+                    inviterName={inviterName}
+                />
+            )}
             {step === 4 && (
                 <Step4Form
+                    onUserNameReceived={onUserNameReceived}
                     inviterName={inviterName}
                     tag={tag}
                     relationship={relationship}

@@ -1,4 +1,18 @@
+import { useState } from 'react';
+
 const Step4Form = (props) => {
+    const [whtsURName, setWhtsURName] = useState([]);
+
+    const handleKeywordChange = (e) => {
+        //     const username = e.target.value;
+        setWhtsURName(e.target.value);
+    };
+
+    const handleNext = () => {
+        // 선택한 키워드 배열을 부모 컴포넌트로 전달
+        props.onUserNameReceived(whtsURName);
+    };
+
     return (
         <>
             <h1>
@@ -9,7 +23,8 @@ const Step4Form = (props) => {
                 <br />
                 {props.inviterName} 청년의 {props.relationship}
                 <br />
-                <input></input>입니다.
+                <input onChange={handleKeywordChange}></input>입니다.
+                <button onClick={handleNext}>다음 단계</button>
             </h2>
         </>
     );
