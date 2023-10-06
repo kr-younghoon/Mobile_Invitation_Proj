@@ -46,12 +46,12 @@ function Step2Form(props) {
                     <input
                         type="radio"
                         name="relationship"
-                        value="친척"
+                        value="애인"
                         onChange={(e) =>
                             setSelectedRelationship(e.target.value)
                         }
                     />
-                    친척
+                    애인
                 </label>
 
                 <label>
