@@ -87,6 +87,8 @@ function Step7Form(props) {
                         {/* <p> {randomVerse} </p> */}
                         <p>말씀 구절: {randomVerse.말씀구절}</p>
                         <p>말씀 본문: {randomVerse.말씀본문}</p>
+                        <p>영어 본문: {randomVerse.영어본문}</p>
+
                         {/* <p>{randomText}</p> */}
                         {/* <img src={randomImageURL} alt="Random" /> */}
                         <button
