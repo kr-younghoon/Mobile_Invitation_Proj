@@ -58,8 +58,9 @@
     align-self: stretch;
     /* subtitle/large */
     font-family: var(--subtitle-large-font);
-    font-size: 24px;
+    font-size: var(--subtitle-large-font-size);
     line-height: var(--subtitle-large-font-height);
+    font-weight: 800;
 }
 .background_circle input {
     width: 152px;
@@ -68,8 +69,9 @@
     border-right: #000000;
     border-left: #000000;
     font-family: var(--subtitle-large-font);
-    font-size: 24px;
+    font-size: var(--subtitle-large-font-size);
     line-height: var(--subtitle-large-font-height);
+    font-weight: 800;
     outline: none;
     text-align: center;
 }

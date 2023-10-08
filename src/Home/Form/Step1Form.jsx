@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import style from './Step1Form.module.css';
 import Polygon3 from '../Assets/SVG/Polygon3';
-import Polygon3Black from '../Assets/SVG/Polygon3_black';
+import Polygon3Black from '../Assets/SVG/Polygon3Black';
 
 function Step1Form(props) {
     // Step 1의 폼 컴포넌트 내용을 구현
