@@ -1,15 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import styles from './index.module.css';
+import './index.css';
 import App from './App';
+// import { Router } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-    <React.StrictMode>
-        <>
-            <div className={styles.layout_main}>
-                <App />
-            </div>
-        </>
-    </React.StrictMode>
-);
+root.render(<App />);

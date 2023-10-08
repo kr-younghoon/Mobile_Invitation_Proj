@@ -7,7 +7,7 @@ function Polygon3Black() {
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
         >
-            <path d="M9 18L15 12L9 6" stroke="black" stroke-width="3" />
+            <path d="M9 18L15 12L9 6" stroke="black" strokeWidth="3" />
         </svg>
     );
 }

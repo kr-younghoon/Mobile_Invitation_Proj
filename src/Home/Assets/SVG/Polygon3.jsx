@@ -10,8 +10,8 @@ function Polygon3() {
             <path
                 d="M9 18L15 12L9 6"
                 stroke="black"
-                stroke-opacity="0.15"
-                stroke-width="3"
+                strokeOpacity="0.15"
+                strokeWidth="3"
             />
         </svg>
     );
