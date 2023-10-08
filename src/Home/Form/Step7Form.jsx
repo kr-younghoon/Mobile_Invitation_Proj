@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 // import db from '../../firebase'; // Firebase 초기화 코드가 있는 파일 경로를 수정하세요.
 import { initializeApp } from 'firebase/app';
 import { getFirestore, collection, getDocs } from 'firebase/firestore';
+import { getStorage, ref, getDownloadURL } from 'firebase/storage';
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -23,10 +24,13 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
+const storage = getStorage(app);
 
 function Step7Form(props) {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [randomVerse, setRandomVerse] = useState({});
+    const [urlPath, setUrlPath] = useState('');
+    // const [imgName, setImgName] = useState('');
 
     const openModal = async () => {
         setIsModalOpen(true);
@@ -64,6 +68,27 @@ function Step7Form(props) {
         fetchRandomVerse();
     }, []);
 
+    // 이미지 URL 확인
+    const imgNameSet = '1';
+
+    const imageUrl = `images/${imgNameSet}.jpeg`; // 실제 이미지 경로에 맞게 설정
+
+    const checkImageUrl = async () => {
+        try {
+            const imageRef = ref(storage, imageUrl);
+            const url = await getDownloadURL(imageRef);
+
+            console.log('이미지 URL:', url);
+
+            setUrlPath(url);
+        } catch (error) {
+            console.error('이미지 로드 중 오류 발생:', error);
+        }
+    };
+
+    // 이미지 URL 확인 함수 호출
+    checkImageUrl();
+
     return (
         <>
             <h1>
@@ -83,14 +108,13 @@ function Step7Form(props) {
             {isModalOpen && (
                 <div>
                     <div>
-                        <h2>랜덤으로 생성된 내용</h2>
-                        {/* <p> {randomVerse} </p> */}
-                        <p>말씀 구절: {randomVerse.말씀구절}</p>
-                        <p>말씀 본문: {randomVerse.말씀본문}</p>
-                        <p>영어 본문: {randomVerse.영어본문}</p>
+                        <div>
+                            <p>{randomVerse.말씀구절}</p>
+                            <p>{randomVerse.말씀본문}</p>
+                            <p>{randomVerse.영어본문}</p>
+                            <img src={urlPath} alt="Random" />
+                        </div>
 
-                        {/* <p>{randomText}</p> */}
-                        {/* <img src={randomImageURL} alt="Random" /> */}
                         <button
                         // onClick={handleCombineAndDownload}
                         >
