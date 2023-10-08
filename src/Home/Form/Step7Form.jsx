@@ -6,6 +6,8 @@ import { useEffect, useState } from 'react';
 import { initializeApp } from 'firebase/app';
 import { getFirestore, collection, getDocs } from 'firebase/firestore';
 import { getStorage, ref, getDownloadURL } from 'firebase/storage';
+import html2canvas from 'html2canvas'; // html-to-image 라이브러리를 html2canvas로 가져옵니다.
+import { saveAs } from 'file-saver'; // 이미지 저장을 위한 라이브러리
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -68,7 +70,7 @@ function Step7Form(props) {
         fetchRandomVerse();
     }, []);
 
-    // 이미지 URL 확인
+    // 임시
     const imgNameSet = '1';
 
     const imageUrl = `images/${imgNameSet}.jpeg`; // 실제 이미지 경로에 맞게 설정
@@ -89,6 +91,25 @@ function Step7Form(props) {
     // 이미지 URL 확인 함수 호출
     checkImageUrl();
 
+    // 이미지 다운로드
+    const handleDownloadImage = async () => {
+        try {
+            const container = document.getElementById('image-container'); // 이미지로 변환할 컨테이너 요소
+            if (container) {
+                console.log('악');
+                const canvas = await html2canvas(container); // 컨테이너를 캔버스로 변환
+                const blob = await new Promise((resolve) => {
+                    canvas.toBlob(resolve, 'image/jpeg'); // 캔버스를 이미지로 변환
+                });
+                if (blob) {
+                    saveAs(blob, 'image.jpg'); // 이미지를 저장
+                }
+            }
+        } catch (error) {
+            console.error('이미지 다운로드 중 오류 발생:', error);
+        }
+    };
+
     return (
         <>
             <h1>
@@ -108,18 +129,14 @@ function Step7Form(props) {
             {isModalOpen && (
                 <div>
                     <div>
-                        <div>
+                        <div id="image-container">
+                            <img src={urlPath} alt="Random" />
                             <p>{randomVerse.말씀구절}</p>
                             <p>{randomVerse.말씀본문}</p>
                             <p>{randomVerse.영어본문}</p>
-                            <img src={urlPath} alt="Random" />
                         </div>
 
-                        <button
-                        // onClick={handleCombineAndDownload}
-                        >
-                            다운로드
-                        </button>
+                        <button onClick={handleDownloadImage}>다운로드</button>
                         <button onClick={closeModal}>닫기</button>
                     </div>
                 </div>
