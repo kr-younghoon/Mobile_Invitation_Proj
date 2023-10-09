@@ -1,0 +1,15 @@
+.title {
+    padding: 0 20px 0;
+    font-family: var(--title-large-font);
+    font-size: var(--title-large-font-size);
+    line-height: var(--title-large-line-height);
+    font-weight: 700; /* 해당 스타일이 Bold인 경우에만 추가 */
+}
+
+.subtitleCaption {
+    padding: 0 20px 0;
+    font-family: var(--subtitle-caption-font);
+    font-size: var(--subtitle-caption-font-size);
+    line-height: var(--subtitle-caption-line-height);
+    font-weight: 700; /* 해당 스타일이 Bold인 경우에만 추가 */
+}

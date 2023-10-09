@@ -7,6 +7,8 @@ import Step5Form from '../Home/Form/Step5Form';
 import Step6Form from '../Home/Form/Step6Form';
 import Step7Form from '../Home/Form/Step7Form';
 import Step8Form from '../Home/Form/Step8Form';
+import styles from './Home.module.css';
+import Polygon3Black from '../Home/Assets/SVG/Polygon3Black';
 
 function Home() {
     const [step, setStep] = useState(1);
@@ -98,7 +100,10 @@ function Home() {
                 {/* {step > 2 && <button onClick={prevStep}>이전 단계</button>} */}
                 {/* {step < 8 && <button onClick={nextStep}>다음 단계</button>} */}
                 {step > 4 && step < 8 && (
-                    <button onClick={nextStep}>다음 단계</button>
+                    <button className={styles.next_button} onClick={nextStep}>
+                        <p className={styles.next_step_text_black}>다음으로</p>
+                        <Polygon3Black />
+                    </button>
                 )}
             </div>
         </div>
