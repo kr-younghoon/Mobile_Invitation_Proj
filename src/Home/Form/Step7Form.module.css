@@ -1,0 +1,40 @@
+.title {
+    padding: 0 20px 20px;
+    font-family: var(--title-large-font);
+    font-size: var(--title-large-font-size);
+    line-height: var(--title-large-line-height);
+    font-weight: 700; /* 해당 스타일이 Bold인 경우에만 추가 */
+}
+
+.lottie {
+    z-index: 1;
+    width: 360px;
+    height: 260px;
+    flex-shrink: 0;
+}
+
+.modalOpenBtn {
+    position: fixed;
+    top: 505px;
+    margin: 0 20px 0;
+    width: 320px;
+    height: 42px;
+    border-radius: 1000px;
+    border: 2px solid #9affb6;
+    background: #fff;
+
+    /* subtitle/small */
+    font-family: var(--subtitle-small-font);
+    font-size: var(--subtitle-small-font-size);
+    line-height: var(--subtitle-small-line-height);
+    font-weight: 700; /* 해당 스타일이 Bold인 경우에만 추가 */
+}
+
+.imgLayout {
+    width: 320px;
+    height: 550px;
+}
+
+/* .ModalLayout {
+    z-index: 3;
+} */
