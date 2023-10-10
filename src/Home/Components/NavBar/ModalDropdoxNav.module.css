@@ -25,13 +25,13 @@
     right: 0;
     bottom: 0;
     width: 360px;
-    height: 640px;
+    /* height: 640px; */
     margin: auto;
 }
 
 .modal_content {
     background-color: white;
-    margin: 0 0 365px;
+    margin: 0 0 auto;
     width: 360px;
     flex-shrink: 0;
 
@@ -50,6 +50,7 @@
 .modal_menu {
     list-style: none;
     padding: 0;
+    margin: 0 0 50px;
 }
 
 .t {
