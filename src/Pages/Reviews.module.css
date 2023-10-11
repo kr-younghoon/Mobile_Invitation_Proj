@@ -1,0 +1,18 @@
+.sub_lg {
+    font-family: var(--subtitle-large-font);
+    font-size: var(--subtitle-large-font-size);
+    line-height: var(--subtitle-large-line-height);
+    font-weight: 800; /* 해당 스타일이 Bold인 경우에만 추가 */
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.writeBtn {
+    margin-left: 20px;
+    /* subtitle/small */
+    font-family: var(--subtitle-small-font);
+    font-size: var(--subtitle-small-font-size);
+    line-height: var(--subtitle-small-line-height);
+    font-weight: 700; /* 해당 스타일이 Bold인 경우에만 추가 */
+    /* btn */
+}

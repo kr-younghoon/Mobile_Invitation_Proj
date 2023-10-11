@@ -1,11 +1,14 @@
+import styles from './Reviews.module.css';
+
 function Reviews() {
     return (
         <>
-            <h1>
+            <p className={styles.sub_lg}>
                 자유롭게 작성하는
                 <br />
                 게시판입니다.
-            </h1>
+            </p>
+            <button className={styles.writeBtn}>작성하기</button>
         </>
     );
 }
