@@ -1,28 +1,34 @@
 import { Link } from 'react-router-dom';
+import styles from './Step8Form.module.css';
 
 const Step8Form = (props) => {
     return (
         <>
-            <h1>
+            <p className={styles.title}>
                 아멘! 말씀대로 되길
                 <br />
                 소망합니다!
-            </h1>
-            <h1>
-                {props.userName} 님을
+            </p>
+            <br />
+            <p className={styles.title}>
+                {props.userName}님을
                 <br />
                 {props.tag} {props.inviterName}
                 <br />
-                청년과 함께 11/5
+                청년과 함께 교회에서
                 <br />
-                교회에서 볼 수 있기를
+                볼 수 있기를
                 <br />
                 기대하겠습니다.
                 <br />
-                <Link to="/reviews">
-                    <button>방명록 작성하기</button>
-                </Link>
-            </h1>
+                <div className={styles.openMapBtn_layout}>
+                    <Link to="/reviews">
+                        <button className={styles.openCommentsBtn}>
+                            방명록 작성하기
+                        </button>
+                    </Link>
+                </div>
+            </p>
         </>
     );
 };
