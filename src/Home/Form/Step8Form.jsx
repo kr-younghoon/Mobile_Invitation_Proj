@@ -21,14 +21,14 @@ const Step8Form = (props) => {
                 <br />
                 기대하겠습니다.
                 <br />
-                <div className={styles.openMapBtn_layout}>
-                    <Link to="/reviews">
-                        <button className={styles.openCommentsBtn}>
-                            방명록 작성하기
-                        </button>
-                    </Link>
-                </div>
             </p>
+            <div className={styles.openMapBtn_layout}>
+                <Link to="/reviews">
+                    <button className={styles.openCommentsBtn}>
+                        방명록 작성하기
+                    </button>
+                </Link>
+            </div>
         </>
     );
 };
