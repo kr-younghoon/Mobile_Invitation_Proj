@@ -1,22 +1,18 @@
 import { initializeApp } from 'firebase/app';
-import { getFirestore } from 'firebase/firestore';
-
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+import { getFirestore } from 'firebase/firestore'; // Import Firestore from Firebase modular SDK
 
 const firebaseConfig = {
-    apiKey: 'AIzaSyAtZ8R-R8UHeh3G3QZI8JEtg4nbCpLiCsw',
-    authDomain: 'mobileinvitation-f5217.firebaseapp.com',
-    projectId: 'mobileinvitation-f5217',
-    storageBucket: 'mobileinvitation-f5217.appspot.com',
-    messagingSenderId: '630019112277',
-    appId: '1:630019112277:web:e930e3643434242d75c3dc',
-    // measurementId: 'G-GDCM6DC1SM',
-    //     databaseURL:
-    //         'https://mobileinvitation-f5217-default-rtdb.asia-southeast1.firebasedatabase.app',
+    apiKey: process.env.REACT_APP_apiKey,
+    authDomain: process.env.REACT_APP_authDomain,
+    projectId: process.env.REACT_APP_projectId,
+    storageBucket: process.env.REACT_APP_storageBucket,
+    messagingSenderId: process.env.REACT_APP_messagingSenderId,
+    appId: process.env.REACT_APP_appId,
+    measurementId: process.env.REACT_APP_measurementId,
+    databaseURL: process.env.REACT_APP_databaseURL,
 };
 
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
+const app = initializeApp(firebaseConfig); // Initialize the app
+const firestore = getFirestore(app); // Initialize Firestore using the app instance
 
-export default db;
+export { app, firestore }; // Export app and firestore for use in other parts of your application
