@@ -2,7 +2,6 @@ import { useState, useRef, useEffect } from 'react';
 import styles from './Reviews.module.css';
 import WriteBtn from '../Home/Assets/SVG/WriteBtn';
 import CloseBtn from '../Home/Assets/SVG/CloseBtn';
-// import { initializeApp } from 'firebase/app';
 import {
     // getFirestore,
     collection,
@@ -14,21 +13,6 @@ import {
     orderBy, // 추가
 } from 'firebase/firestore'; // Firestore 모듈에서 필요한 함수 가져오기
 import { firestore } from '../firebase';
-// Firebase 구성 객체
-// const firebaseConfig = {
-//     apiKey: process.env.REACT_APP_apiKey,
-//     authDomain: process.env.REACT_APP_authDomain,
-//     projectId: process.env.REACT_APP_projectId,
-//     storageBucket: process.env.REACT_APP_storageBucket,
-//     messagingSenderId: process.env.REACT_APP_messagingSenderId,
-//     appId: process.env.REACT_APP_appId,
-//     measurementId: process.env.REACT_APP_measurementId,
-//     databaseURL: process.env.REACT_APP_databaseURL,
-// };
-// console.log(process.env.REACT_APP_databaseURL);
-// console.log(process.env.REACT_APP_measurementId);
-// const app = initializeApp(firebaseConfig); // Firebase 초기화
-// const firestore = getFirestore(app); // Firestore 객체 가져오기
 
 function Reviews() {
     const [isBtnOpen, setIsBtnOpen] = useState(true);
