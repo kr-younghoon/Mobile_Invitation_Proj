@@ -9,7 +9,10 @@ function App() {
     return (
         <Router basename="/">
             <>
-                <ModalDropdownNav />
+                <ModalDropdownNav
+                    styles="z-index:9999"
+                    className={styles.modal}
+                />
                 <div className={styles.layout_page}>
                     <Routes>
                         <Route path="/" element={<Home />} />
