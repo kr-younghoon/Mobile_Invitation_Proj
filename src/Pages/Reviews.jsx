@@ -52,6 +52,7 @@ function Reviews() {
 
     const uploadCommentReply = async () => {
         try {
+            console.log('bye');
             if (comment.trim() !== '') {
                 await addDoc(commentsCollection, {
                     text: comment,
@@ -69,6 +70,7 @@ function Reviews() {
 
     const fetchComments = async () => {
         try {
+            console.log('hi');
             const querySnapshot = await getDocs(commentsCollection);
             const commentsData = [];
             querySnapshot.forEach((doc) => {
