@@ -25,7 +25,8 @@ const firebaseConfig = {
     measurementId: process.env.REACT_APP_measurementId,
     databaseURL: process.env.REACT_APP_databaseURL,
 };
-
+console.log(process.env.REACT_APP_databaseURL);
+console.log(process.env.REACT_APP_measurementId);
 const app = initializeApp(firebaseConfig); // Firebase 초기화
 const firestore = getFirestore(app); // Firestore 객체 가져오기
 
@@ -84,7 +85,6 @@ function Reviews() {
 
     const fetchComments = async () => {
         try {
-            console.log('fetchComments');
             const querySnapshot = await getDocs(commentsCollection);
             const commentsData = [];
             querySnapshot.forEach((doc) => {
