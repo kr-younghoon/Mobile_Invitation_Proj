@@ -9,6 +9,9 @@ import {
     getDocs,
     addDoc,
     serverTimestamp,
+    onSnapshot, // 추가
+    query, // 추가
+    orderBy, // 추가
 } from 'firebase/firestore'; // Firestore 모듈에서 필요한 함수 가져오기
 
 // Firebase 구성 객체
@@ -95,6 +98,24 @@ function Reviews() {
 
     useEffect(() => {
         fetchComments();
+        const commentsQuery = query(
+            commentsCollection,
+            orderBy('timestamp', 'desc')
+        );
+
+        // 댓글 컬렉션을 모니터링하여 실시간 업데이트를 처리합니다.
+        const unsubscribe = onSnapshot(commentsQuery, (querySnapshot) => {
+            const commentsData = [];
+            querySnapshot.forEach((doc) => {
+                commentsData.push(doc.data());
+            });
+            setComments(commentsData);
+        });
+
+        return () => {
+            // 컴포넌트가 언마운트될 때 구독 해제
+            unsubscribe();
+        };
         // eslint-disable-next-line
     }, []);
 
