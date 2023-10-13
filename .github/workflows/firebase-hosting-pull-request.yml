@@ -10,8 +10,6 @@ jobs:
               uses: actions/setup-node@v2
               with:
                   node-version: 20
-            - name: Install dependencies
-              run: npm ci && npm run build
             - name: Set environment variables
               run: |
                   echo "REACT_APP_GOOGLE_API_KEY=${{ secrets.REACT_APP_GOOGLE_API_KEY }}" >> .env
@@ -23,6 +21,8 @@ jobs:
                   echo "REACT_APP_APPID=${{ secrets.REACT_APP_APPID }}" >> .env
                   echo "REACT_APP_MEASUREMENTID=${{ secrets.REACT_APP_MEASUREMENTID }}" >> .env
                   echo "REACT_APP_DATABASEURL=${{ secrets.REACT_APP_DATABASEURL }}" >> .env
+            - name: Install dependencies
+              run: npm ci && npm run build
             - uses: FirebaseExtended/action-hosting-deploy@v0
               with:
                   repoToken: '${{ secrets.GITHUB_TOKEN }}'
