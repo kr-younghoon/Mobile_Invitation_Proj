@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { initializeApp } from 'firebase/app';
 import { getStorage, ref, getDownloadURL } from 'firebase/storage';
 import styles from './Step7Form.module.css';
-import ModalComponent from '../Assets/Modal/ModalComponent';
+import ModalComponent from '../Components/Modal/ModalComponent';
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 

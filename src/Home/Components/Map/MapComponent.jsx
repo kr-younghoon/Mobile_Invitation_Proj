@@ -1,6 +1,6 @@
 import { GoogleMap, LoadScriptNext, MarkerF } from '@react-google-maps/api';
 import { useMemo } from 'react';
-import ChurchIcon from '../../Assets/SVG/ChurchIcon';
+
 function MapComponent() {
     const mapContainerStyle = {
         width: '320px',
@@ -33,10 +33,7 @@ function MapComponent() {
                 options={{ disableDefaultUI: true, styles: myStyles }}
                 zoom={15}
             >
-                <MarkerF
-                    position={center}
-                    icon={{ url: <ChurchIcon />, scale: 5 }}
-                />
+                <MarkerF position={center} />
             </GoogleMap>
         </LoadScriptNext>
     );
