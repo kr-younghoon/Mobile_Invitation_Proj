@@ -1,11 +1,6 @@
-.modalclosebtn {
-    z-index: 1000;
-    position: fixed;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    margin: 12px 0 0 268px;
-}
+/* .modalclosebtn {
+
+} */
 
 .sub_cap {
     font-family: var(--subtitle-caption-font);
@@ -14,17 +9,7 @@
     font-weight: 700; /* 해당 스타일이 Bold인 경우에만 추가 */
 }
 
-.comment {
-    z-index: 1;
-    position: relative;
-    color: rgba(0, 0, 0, 0.3);
-    text-align: center;
-    left: 0;
-    right: 0;
-    margin: 489px 0 0 0;
-}
-
-/* @keyframes slideIn2 {
+@keyframes slideIn2 {
     0% {
         opacity: 0;
     }
@@ -40,5 +25,34 @@
 }
 
 .slide_in2 {
-    animation: slideIn2 3s; 
-} */
+    animation: slideIn2 3s;
+}
+
+.ModalLottie {
+    position: absolute;
+    z-index: 4;
+}
+
+.ModalCloseBtn {
+    z-index: 3;
+    position: absolute;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin: 12px 0 0 268px;
+}
+
+.ModalGuideText {
+    z-index: 3;
+    position: absolute;
+    margin-top: 489px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.3);
+}
+
+.ModalImg {
+    z-index: 2;
+    position: relative;
+}

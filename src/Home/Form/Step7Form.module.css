@@ -37,6 +37,9 @@
     height: 100%;
 }
 
-/* .ModalLayout {
-    z-index: 3;
-} */
+.ModalLayout {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
