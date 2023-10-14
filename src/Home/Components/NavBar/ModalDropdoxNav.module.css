@@ -16,7 +16,6 @@
 }
 
 .modal {
-    background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     justify-content: center;
     position: fixed;
@@ -29,6 +28,10 @@
     margin: auto;
 }
 
+.slide_in {
+    animation: slideIn 3.8s ease-in-out; /* 애니메이션 지속 시간 및 타이밍 함수 설정 */
+}
+
 .modal_content {
     background-color: white;
     margin: 0 0 auto;
@@ -36,7 +39,7 @@
     flex-shrink: 0;
 
     /* border-radius: 5px; */
-    /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); */
+    box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.15);
 }
 
 .modal_close {

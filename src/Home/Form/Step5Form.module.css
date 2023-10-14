@@ -48,5 +48,5 @@
 }
 
 .slide_in2 {
-    animation: slideIn2 4s ease-in-out; /* 애니메이션 지속 시간 및 타이밍 함수 설정 */
+    animation: slideIn2 3s ease-in-out; /* 애니메이션 지속 시간 및 타이밍 함수 설정 */
 }

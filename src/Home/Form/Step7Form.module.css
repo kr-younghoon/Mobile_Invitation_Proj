@@ -6,8 +6,8 @@
     font-weight: 700; /* 해당 스타일이 Bold인 경우에만 추가 */
 }
 
-.lottie {
-    z-index: 1;
+.lottiejson {
+    z-index: 10;
     width: 360px;
     height: 260px;
     flex-shrink: 0;

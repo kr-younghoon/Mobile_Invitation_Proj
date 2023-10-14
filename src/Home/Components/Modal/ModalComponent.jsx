@@ -7,7 +7,7 @@ import DUMMY from '../../Assets/JSON/heart-boom.json';
 function ModalComponent({ isOpen, closeModal, content }) {
     const ModalStyle = {
         overlay: {
-            position: 'fixed',
+            position: 'absolute',
         },
         content: {
             display: 'flex',
@@ -21,41 +21,39 @@ function ModalComponent({ isOpen, closeModal, content }) {
             bottom: '0px',
             margin: 'auto',
             borderRadius: '20px',
-            zIndex: 10,
+            zIndex: 1000,
             padding: 0,
             // padding: '30px',
         },
     };
 
     return (
-        <div className={styles.modal}>
-            <Modal
-                appElement={document.getElementById('root')}
-                // 또는 다른 주요 콘텐츠의 루트 요소
-                style={ModalStyle}
-                isOpen={isOpen}
-                onRequestClose={closeModal}
-            >
+        <Modal
+            appElement={document.getElementById('root')}
+            // 또는 다른 주요 콘텐츠의 루트 요소
+            style={ModalStyle}
+            isOpen={isOpen}
+            onRequestClose={closeModal}
+        >
+            <div className={styles.content}>
                 <Lottie
                     animationData={DUMMY}
-                    className={styles.lottiejson}
-                    loop={false}
+                    // loop={false}
                 ></Lottie>
-
-                <div>
+                <div className={`${styles.layout} ${styles.slide_in2}`}>
                     <button
                         onClick={closeModal}
                         className={styles.modalclosebtn}
                     >
                         <ModalCloseBtn />
                     </button>
-                    {content}
+                    <div className={styles.imgContent}>{content}</div>
+                    <p className={`${styles.sub_cap} ${styles.comment}`}>
+                        길게 탭하여 말씀카드를 저장해보세요!
+                    </p>
                 </div>
-                <p className={`${styles.sub_cap} ${styles.comment}`}>
-                    길게 탭하여 말씀카드를 저장해보세요!
-                </p>
-            </Modal>
-        </div>
+            </div>
+        </Modal>
     );
 }
 

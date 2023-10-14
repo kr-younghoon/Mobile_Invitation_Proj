@@ -20,7 +20,7 @@ function ModalDropdownNav() {
 
             {showModal && (
                 <div className={styles.pre_modal}>
-                    <div className={styles.modal}>
+                    <div className={`${styles.modal}`}>
                         <div className={styles.modal_content}>
                             <button
                                 className={styles.modal_close}
