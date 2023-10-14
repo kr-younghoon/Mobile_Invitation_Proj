@@ -38,11 +38,11 @@ function Step1Form(props) {
                     className={style.next_button}
                     onClick={() => props.oninviterNameReceived(inputValue)}
                 >
-                    <p className={style.next_step_text_black}>다음으로</p>
+                    <p className={`${style.next_step_text_black}`}>다음으로</p>
                     <Polygon3Black />
                 </button>
             )}
-            <div className={style.background_circle}>
+            <div className={`${style.background_circle} ${style.slide_in}`}>
                 <div></div>
                 <p>
                     당신을 초대한 사람은 <br />

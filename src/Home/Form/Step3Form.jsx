@@ -46,7 +46,10 @@ const Step3Form = (props) => {
                 <p className={nextButtonTextClass}>다음으로</p>
                 <NextButtonComponent />
             </button>
-            <div className={styles.CheckboxButtonLayout}>
+            <div
+                // className={`${styles.CheckboxButtonLayout} ${styles.fade_in_buttons}`}
+                className={`${styles.CheckboxButtonLayout}`}
+            >
                 <div>
                     <CheckboxButton
                         value="😄 친절한"

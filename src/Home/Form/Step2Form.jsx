@@ -56,7 +56,7 @@ function Step2Form(props) {
                 {polygonComponent}
             </button>
             <form className={styles.formLayout}>
-                <div className={styles.formLayoutLine}>
+                <div className={`${styles.formLayoutLine} ${styles.slide_in} `}>
                     <label>
                         <input
                             type="radio"
@@ -96,7 +96,7 @@ function Step2Form(props) {
                         <p>애인</p>
                     </label>
                 </div>
-                <div className={styles.formLayoutLine}>
+                <div className={`${styles.formLayoutLine} ${styles.slide_in2}`}>
                     <label>
                         <input
                             type="radio"

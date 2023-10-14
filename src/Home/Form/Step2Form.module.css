@@ -97,3 +97,48 @@ label {
     background-color: black;
     color: white;
 }
+
+/* Step2Form.module.css */
+.secondRadioGroup {
+    transform: translateY(100px); /* Initial position, adjust as needed */
+    opacity: 0;
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+    transition-delay: 0.5s; /* Delay the animation by 0.5 seconds */
+}
+
+/* 새로운 CSS 클래스 및 애니메이션 추가 */
+@keyframes slideIn {
+    from {
+        transform: translateY(100%); /* 시작 위치: 아래에서 위로 숨겨진 상태 */
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0); /* 끝 위치: 화면 안으로 위로 이동 */
+        opacity: 1;
+    }
+}
+
+.slide_in {
+    animation: slideIn 1s ease-in-out; /* 애니메이션 지속 시간 및 타이밍 함수 설정 */
+}
+
+@keyframes slideIn2 {
+    0% {
+        transform: translateY(100%); /* 시작 위치: 아래에서 위로 숨겨진 상태 */
+        opacity: 0;
+    }
+    50% {
+        transform: translateY(
+            100%
+        ); /* 애니메이션 지연을 위해 50% 동안 현재 위치를 유지합니다 */
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0); /* 끝 위치: 화면 안으로 위로 이동 */
+        opacity: 1;
+    }
+}
+
+.slide_in2 {
+    animation: slideIn2 2s ease-in-out; /* 애니메이션 지속 시간 및 타이밍 함수 설정 */
+}

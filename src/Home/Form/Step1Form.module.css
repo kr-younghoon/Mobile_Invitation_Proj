@@ -74,8 +74,21 @@
     font-weight: 800;
     outline: none;
     text-align: center;
+    color: var(--text-color);
 }
 
-.background_circle input:focus {
-    color: var(--text-color);
+/* 새로운 CSS 클래스 및 애니메이션 추가 */
+@keyframes slideIn {
+    from {
+        transform: translateY(100%); /* 시작 위치: 아래에서 위로 숨겨진 상태 */
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0); /* 끝 위치: 화면 안으로 위로 이동 */
+        opacity: 1;
+    }
+}
+
+.slide_in {
+    animation: slideIn 3.8s ease-in-out; /* 애니메이션 지속 시간 및 타이밍 함수 설정 */
 }

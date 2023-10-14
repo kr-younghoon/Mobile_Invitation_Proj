@@ -42,9 +42,8 @@ const Step4Form = (props) => {
                     <Polygon3Black />
                 </button>
             )}
-            <div className={style.background_circle}>
+            <div className={`${style.background_circle} ${style.slide_in}`}>
                 <div></div>
-
                 <p>
                     저는 {props.tag}
                     <br />

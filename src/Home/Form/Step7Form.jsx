@@ -25,7 +25,7 @@ const storage = getStorage(app);
 function Step7Form(props) {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [urlPath, setUrlPath] = useState('');
-    const [DownloadPath, setDownloadPath] = useState('');
+    // const [DownloadPath, setDownloadPath] = useState('');
 
     const openModal = async () => {
         checkImageUrl();
@@ -38,7 +38,7 @@ function Step7Form(props) {
 
     const imgNameSet = Math.floor(Math.random() * 199);
     const imageUrl = `gs://mobileinvitation-f5217.appspot.com/Img${imgNameSet}.png`; // 실제 이미지 경로에 맞게 설정
-    const DownloadUrl = `../Assets/images/Img${imgNameSet}.png`; // 실제 이미지 경로에 맞게 설정
+    // const DownloadUrl = `../Assets/images/Img${imgNameSet}.png`; // 실제 이미지 경로에 맞게 설정
 
     const checkImageUrl = async () => {
         try {
@@ -47,7 +47,7 @@ function Step7Form(props) {
             console.log('이미지 URL:', url);
 
             setUrlPath(url);
-            setDownloadPath(DownloadUrl);
+            // setDownloadPath(DownloadUrl);
         } catch (error) {
             console.log(imageUrl);
             console.error('이미지 로드 중 오류 발생:', error);
@@ -59,9 +59,9 @@ function Step7Form(props) {
             <div id="image-container">
                 <img className={styles.imgLayout} src={urlPath} alt="Random" />
             </div>
-            <a href={DownloadPath} download="말씀.png">
-                <button>다운로드</button>
-            </a>
+            {/* <a href={DownloadPath} download="말씀.png"> */}
+            {/* <button>다운로드</button> */}
+            {/* </a> */}
         </div>
     );
 
@@ -81,7 +81,7 @@ function Step7Form(props) {
             <div>
                 <Lottie animationData={DUMMY}></Lottie>
                 <button className={styles.modalOpenBtn} onClick={openModal}>
-                    두근두근 나의 성경 말씀은?(미완성)
+                    두근두근 나의 성경 말씀은?
                 </button>
             </div>
             <div className={styles.ModalLayout}>
