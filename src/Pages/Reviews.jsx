@@ -52,7 +52,6 @@ function Reviews() {
 
     const uploadCommentReply = async () => {
         try {
-            console.log('bye');
             if (comment.trim() !== '') {
                 await addDoc(commentsCollection, {
                     text: comment,
@@ -70,18 +69,14 @@ function Reviews() {
 
     const fetchComments = async () => {
         try {
-            console.log('hi');
             const querySnapshot = await getDocs(commentsCollection);
-            console.log('hi1');
             const commentsData = [];
-            console.log('hi2');
+
             querySnapshot.forEach((doc) => {
-                console.log('hi3');
                 commentsData.push(doc.data());
             });
-            console.log('hi4');
+
             setComments(commentsData);
-            console.log('hi5');
         } catch (error) {
             console.error('Error fetching comments:', error);
         }

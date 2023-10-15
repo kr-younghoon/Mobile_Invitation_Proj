@@ -63,8 +63,8 @@ function Home() {
     const onSeletedTagReceived = (data) => {
         setSelectTag({ ...selectTag, step2Data: data });
         nextStep();
-        console.log(data);
-        console.log(selectTag.step2DataS);
+        // console.log(data);
+        // console.log(selectTag.step2DataS);
     };
 
     const onKeywordsReceived = (keywords) => {
