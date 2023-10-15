@@ -78,10 +78,13 @@ function Step7Form(props) {
                 <br />
                 준비했어요!
             </p>
-            <div>
-                <Lottie animationData={DUMMY}></Lottie>
+            <div className={styles.box}>
+                <p> 두근두근! 나의 성경 말씀은? </p>
+                <div className={styles.lottieSize}>
+                    <Lottie animationData={DUMMY}></Lottie>
+                </div>
                 <button className={styles.modalOpenBtn} onClick={openModal}>
-                    두근두근 나의 성경 말씀은?
+                    말씀카드 뽑기
                 </button>
             </div>
             <div className={styles.ModalLayout}>

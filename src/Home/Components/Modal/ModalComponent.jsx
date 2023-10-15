@@ -16,7 +16,7 @@ function ModalComponent({ isOpen, closeModal, content }) {
             right: 0,
             bottom: 0,
             margin: 'auto',
-            // zIndex: 1000,
+            zIndex: 1000,
             justifyContent: 'center',
             alignItems: 'center',
         },
