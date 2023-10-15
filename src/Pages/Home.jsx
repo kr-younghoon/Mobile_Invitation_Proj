@@ -9,6 +9,8 @@ import Step7Form from '../Home/Form/Step7Form';
 import Step8Form from '../Home/Form/Step8Form';
 import styles from './Home.module.css';
 import Polygon3Black from '../Home/Assets/SVG/Polygon3Black';
+import { collection, addDoc } from 'firebase/firestore';
+import { firestore } from '../firebase';
 
 function Home() {
     const [step, setStep] = useState(1);
@@ -24,6 +26,30 @@ function Home() {
             Math.floor(Math.random() * (selectedKeywords.length - 1))
         ];
     let relationship = selectTag.step2Data;
+
+    if (step === 5) {
+        // Define the data to be saved
+        const dataToSave = {
+            inviterName,
+            tag,
+            relationship,
+            userName,
+        };
+
+        // Reference to a Firestore collection (change 'your_collection' to your collection name)
+        const dataCollection = collection(firestore, 'your_collection');
+
+        // Add the data to the Firestore collection
+        addDoc(dataCollection, dataToSave)
+            .then((docRef) => {
+                // Data saved successfully
+                console.log('Document written with ID: ', docRef.id);
+            })
+            .catch((error) => {
+                // Handle errors
+                console.error('Error adding document: ', error);
+            });
+    }
 
     const nextStep = () => {
         setStep(step + 1);
