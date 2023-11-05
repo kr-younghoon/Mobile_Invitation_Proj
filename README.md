@@ -1,70 +1,126 @@
-# Getting Started with Create React App
+> 약 2주동안 진행되었던 초대장 프로젝트가 종료되었다. 어떤 프로젝트였는지, 그리고 왜 만들었는지, 뭐가 어려웠는지 같은 것들을 적어놓는다.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- 제작 시기 : 9.28 - 10.14
+- 서비스 시간 : 10.14 - 11.5
+- 인원 : 디자이너 (1명), 개발자 (1명)
+- 주제 : 모바일 초대장
+- 상세 내용 : 교회 축제 전에 초대할 수 있게 모바일 초대장을 만들었다. 그 사람을 축복해주며, 말씀 카드를 뽑을 수 있게 하는 단계형 폼을 제작하였다.
 
-## Available Scripts
+![](https://velog.velcdn.com/images/younghoon/post/9b2831e7-73c9-475b-888e-f93f8fedff6f/image.png)
 
-In the project directory, you can run:
 
-### `npm start`
+# 교회 내의 부서, 사이드 프로젝트.
+우리 교회에는 홍보를 담당하는 부서 사이드 프로젝트 라는 부서가 있다. 이번에 크래프톤 정글이 끝나면, 들어가겠다고 연초부터 말했기에 조금 어쩔 수 없이 들어가게 되었다.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+들어가자마자 부서의 리더인 현직 디자이너 분께서는 웹으로 된 프로젝트를 진행하고 싶어하셨다. 그래서 시작된 프로젝트. 간단하게 만드는거니까 어렵겠어? 하며 자신감 가득하게 포부를 내놓으며 디자인 시안을 기다렸다. 웹 디자인은 피그마를 통해서 진행하였다.
+# 협업 ?
+디자이너와의 협업은 사실 친하신 분이라, 커뮤니케이션을 하는 데에는 어려움이 없었다. 피그마도 이전 프로젝트에서 사용해봤기에 어려움이 없었고, 너무 피그마가 잘되어 있는거 같아서 편했다. (사실 나의 역량은 너무 부족이었는데, 짧은 시간 내에 프로덕트를 만들어내야하는 것을 감안해서 쉽게 만들어 주신거 같아 너무 감사하다.)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+자체적으로 이슈나 코드 컨벤션, 커밋 컨벤션 같은 것들을 해놓고 해보고 싶었다. 크래프톤 정글에서 현오형이나 혜민누나가 너무 잘 사용하시는게 볼수록 인상적이었다. 
 
-### `npm test`
+이번 프로젝트를 통해 어떻게 써야겠다는 확실히 깨달았던거 같은데(깔끔히 쓰지는 못했다..ㅋㅋ 해본게 어디인가.) 어떤식으로 쓰는게 규칙에만 매달리는 것이 아니라 효율을 추구할 수 있는지를 조금 더 고민해보고 같이 프로젝트 하는 사람이 생기면 같이 방법을 공유해서 해봐야겠다.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# 단계형 폼 vs 스크롤형 페이지
+![](https://velog.velcdn.com/images/younghoon/post/3f60790b-0674-4840-b45f-794bd036824c/image.png)
 
-### `npm run build`
+처음 이 서비스를 같이 기획하며, 고민 했던 것들이 있다.
+바로 단계형으로 할지 스크롤형으로 할지 고민이었다. 한 페이지 안에서 이뤄지길 원했던터라. 개인적으로는 스크롤형 페이지을 제작해보고 싶었지만(향후 애플 웹 페이지를 클론 코딩 해보리라... 라는 근자감), 우리는 초대자의 이름, 초대받은 자의 이름 같은 것들에 대한 응답이 필요했기 때문에 단계형 폼을 정해서 구현을 했었다.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 단계형 폼
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![](https://velog.velcdn.com/images/younghoon/post/5eef02b5-f0de-49b6-854c-23835e4cdc14/image.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+단계형 폼은 생각보다 간단했다.
 
-### `npm run eject`
+한 컴포넌트를 만들어 페이지마다 숫자를 정해 다음 버튼을 누를 때 마다 다른 컴퍼넌트를 보여주는 방식으로 만들었다. 이 부분은 GPT를 참고했다.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+처음에는 너무 간단해서 금방 만들 줄 알았지만, 한 가지 기억에 남는 어려움은 컴포넌트와 컴포넌트 사이에 props를 전달해주는 문제였다.
+부모 컴포넌트에서 자식 컴포넌트를 전달해주는 것은 어렵지가 않았었다.
+하지만 만들면서 고민했었던 것은 
+(부모 컴포넌트) - (자식 컴포넌트) - (자식의 자식 컴포넌트)
+나는 코드 재사용을 위해 form 같은 태그는 따로 분리해서 만들고 싶었다. 하지만 단계형 폼이다 보니까, 이전 단계에서 받은 DB를 다음 단계에서 받아서 써야했는데 이 부분에서 어떻게 해야하는지 무지했다.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+아마 상태관리를 사용했어야 했나 싶었지만, 내가 아직 이 부분에서 너무 부족했지만, 빠르게 제작하여 서비스하여야 했기에 비효율적인 코드를 많이 썼었던거 같다.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+물론 유저 입장에서는 사용하는데 불편함은 없었던거 같지만, 효율적인 코드를 위해 어떻게 하는 것이 좋을지 한번 더 고민했었던 시간이었던거 같다.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+앞으로 상태관리에 대해 조금 공부하고 싶다는 마음이 생겼다.
 
-## Learn More
+# 모바일 사이즈의 초대장
+![](https://velog.velcdn.com/images/younghoon/post/5cdf636d-e281-483c-a8d2-cd5439ede560/image.png)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+사용자는 카카오톡으로 초대장을 받아 열어보게 된다. 나는 카카오톡에서 실행되는 웹에 맞게 제작하여야 하는 상황이었다. 개인적으로 이전 프로젝트에서 CSS 작업을 잘 감당했었던 경험이 있었기에 자신감이 있었지만, 모바일에 대한 대응은 한번도 없어서, 공부를 하고 싶었지만 이것 또한 출시가 급했기에 할수가 없었다 ㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠ
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+그래서 디자이너 분과 나는 모바일 최소 사이즈로 구현하여 모든 모바일에서 보일 수 있게 제작하였다. 다행히도 그렇게 해서 모든 서비스에서 이상없이 작동하였던 거 같다. 감사하다..
 
-### Code Splitting
+사실 CSS 작업은 기능에 영향을 끼치는 부분은 아니었기에 얼마나 디테일을 살리냐의 영역이었지만, 이번에는 역시 시간이 부족하였기에 그렇게 큰 비중을 두지 못했다.(이전 프로젝트에서도 CSS를 하느라 시간을 많이 소모한 경험이 있었기에 거기에 시간을 두고 싶지 않았다! 하지만 너무 중요한 부분이었던거 같기도..ㅠㅠ 하하..)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+나는 제작하고 모바일과 웹이 비슷하게 보이겠거니 하고 웹에서만 계속 확인하며 진행하였는데 생각보다 폰트에서부터 약간의 디테일한 것들(예시를 들어 input 밑줄 같은..) 에서 차이나 많이 나는 것을 확인하였다.
 
-### Analyzing the Bundle Size
+중간에 확인해보지 않고 나중에 배포하고 나서 확인한 것이 너무 아쉬웠다.(크롬 모바일웹과 카카오톡 웹이 이렇게 다를 줄 몰랐다.)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+앞으로는 마일스톤을 명확하게 두어 조금 더 점검을 명확하게 해야하겠다는 생각이 들었다. 또 html + CSS에 대한 기초를 조금 더 심화하여 어떻게 모바일에서 다뤄야하는지, 에 대한 공부가 필요하겠다 느꼈다.
 
-### Making a Progressive Web App
+## 메인 기능. 말씀 카드 뽑기
+사실 우리의 메인 핵심 기능은 말씀 카드를 뽑는 것이었다.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+![](https://velog.velcdn.com/images/younghoon/post/1029c04f-fd6c-40a6-8766-5b8d9fe4748a/image.gif)
 
-### Advanced Configuration
+이런식으로 말씀카드를 뽑을 수 있다. 우리는 storage에 백그라운드 이미지를 저장하고 db에 말씀 텍스트를 분류하여 랜덤으로 이미지와 텍스트가 조합되어서 퍼스널하게 유저에게 제공해주는 기능을 제작하고 싶었고, 실제로 그렇게 기획하게 되었다.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+gpt를 통해 html-to-jpg 라든가 여러 것들을 알아서 쉽게 되겠구나 생각하고 사실 안일하게도 MVP를 테스트 해보지 않았다.
 
-### Deployment
+하지만 html 뼈대를 다 제작하고 mvp를 그 이후에 테스트해보게 되었는데, jpg 사진파일과 p태그의 html 파일이 jpg 파일로 제작되어야하는데, 다운로드까지 잘 되어졌지만, jpg 파일은 출력되지 않았다.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+시간적 여유가 없어서 디자이너 분에게 그냥 샘플을 부탁하여 손수 만들어주셨다.. 
+![](https://velog.velcdn.com/images/younghoon/post/e4e38eb1-10cd-487c-9673-b14c5ce8247d/image.png)
+자신 있게 만들 수 있다고 자부했는데 못만들어서 너무 미안했다.
+사실 이후에 머리로 생각하기론 아 그때 그냥 jpg가 아니라 svg파일이었으면 가능하지 않았을까 하는 생각이 있긴하다. 앞으로 조금 여유가 있을때 한번 다시 만들어 볼 생각이다.
 
-### `npm run build` fails to minify
+이 기능을 만들면서 Lottie-JSON을 다뤄보게 되었는데, 다루던 중 오류가 조금 있었어서 하루를 날려먹었는데 그럼에도 해결 안되어서 멘붕이었지만, 근데 어느 순간 해결되어서 다행이었다. 왜 되는지 몰라서 여전히 의문이다. 항상 이럴땐 어떻게 해야할지 모르겠다.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+서비스 기간이 끝났고, 앞으로 공부할 것들이 많아 리팩토링을 사실 할지 모르겠으나, 우리 사이드 프로젝트는 크리스마스에 한번 더 할 계획이기에 이 기능을 다음 번에 다시 도전해봐야겠다.
+
+
+# 구글 지도
+![](https://velog.velcdn.com/images/younghoon/post/70b8cf9e-0c4a-460a-a284-3740a36322bc/image.png)
+
+우리의 프로젝트는 교회에 초청하는 것이기 때문에 교회의 주소 안내가 필요했다.
+
+디자이너분께서는 구글 지도를 원하셨고, 사실 지도 API를 써본 적 없어서 그냥 그러려니 하고 있다가, 시간에 쪼들리며 만드는 마지막 날 지도 API를 넣는데, 이게 유료 서비스라 놀랐다.
+
+네이버 지도도 유료인거 같고, 카카오는 모르겠다.
+하지만 진짜 시간이 부족해서 고민할 틈도 없이 얼른 구현해버렸다.
+![](https://velog.velcdn.com/images/younghoon/post/86cdb2ee-e72a-479c-8b6a-28b6fdde35f7/image.png)
+생각보다 돈을 내게 되어 당황스러웠다. 나는 체험판만 쏙 쓰고 싶었는데 쩝..
+
+지난 번 나만무 프로젝트 당시 OAuth2를 사용하기 위해 구글 서비스를 이용한 적이 있다. 그 때도 느꼈지만, 정말 간단하게 구현하기에는 정말 좋은 것같다. (모듈이 잘 구현 되어있다.ㅎㅎ)
+
+
+# 파이어베이스 ?
+파이어베이스는 사실 모르고 있다가 크래프톤 정글에서 승우라는 친구를 통해 알게 되었다. 프론트를 제작하면 파이어베이스 연동을 하여 백 서비스 할 수 있는 간편한 서비스가 있다는 것을 알고 있었고, 그것을 통해서 하면 간단하게 되겠거니 하고, 자신감있게 말한 것이었었다.
+
+막상 써보니 너무 생각 외로 괜찮고 좋은 서비스였다. 도메인에, 호스팅, CI/CD.. 내가 나만무 프로젝트 중에 하고 싶었던 서비스들이 다 있어서 너무 좋았고, 혼자 진행하면서 어떤 flow로 배포가 진행 되는지 이해할 수 있는 시간이었다. 
+
+물론 난관은 존재했다.rule에 대한 무지함과 배포시 env, rule 이슈, api 이슈 등 다양한 어려움이 존재했었다. 검색과 GPT로 해결되지 않아서 너무 힘들었지만, 다행히 파이어베이스에 관한 모든 이슈들은 해결할 수 있었다. 폴더 내 파이어베이스 파일을 확인하면서 해결하게 된 것들이 특히 많았다.
+
+조금 더 개선해본다면 다음 번엔 구글 애널리틱스를 통해 사용자들을 관리하고 싶은 마음이 있다. 이번에는 db를 통해 몇명이 폼에 응했는지는 알 수 있었지만, 우리 페이지의 접속자, 페이지 이탈자 등을 명확히 알 수 없어서 아쉬웠다.
+
+기회가 된다면 블로그에 파이어베이스에 관한 글을 적고 싶다. (능력부족 x_x)
+
+# 돌아보면서.. 개인적 생각.
+역시 혼자서 코드를 빠르게 쳐내는 것은 너무 어려운 일이었다.
+모르는게 너무 많아서 어떻게 하는 것이 잘하는 것일까에 대한 고민이 많았고, 문제 해결도 너무 어거지로 다양하게 쳐냈던거 같아서 하루하루가 전쟁 같았다.(나만무 프로젝트 때의 협업 경험이 너무 소중했다.) 완벽하게 만들지도 못하여 아쉬움이 있다. 끝나자마자 바로 중간고사를 준비해야해서 서비스 시작 이후 리팩토링을 할 수 있는 여유가 없었다.
+
+학업과 같이 하려니까 너무 시간이 부족했지만, 이렇게 많은 인원수는 아니더라도 유저가 있는 웹 서비스를 만드는 경험은 너무 귀한 경험이었다. 앞으로 해보면서 다양한 문제와 유저에게 제공하는 서비스 경험을 계속 가지고 싶다.
+
+중간고사 기간이 드디어 끝났다. 앞으로 html+CSS 부터 시작하여 리액트, 타입 스크립트를 다양하게 공부하며 다시 프로젝트를 12월에 시작해봐야겠다. 슬슬 코딩 테스트도 준비해야하는데 할 게 많아서 걱정이다. ~.~
+
+하고 싶은 말이 더 많지만, 내일 또 학교에 가야하므로 이만 급히 마친다. 앞으로도 화이팅!
+
+### 진짜 못 해결했던 문제.
+github 배포 중 env를 못불러오는 문제.
+![](https://velog.velcdn.com/images/younghoon/post/9f1f4079-bcfd-487e-91b6-9f1cf730b102/image.png)
+
+분명 잘 불러왔다고 생각했는데 왜 안되는지 모르겠다.
+그냥 결국 github action을 통해서가 아닌 자체적으로 배포로 해결하였지만, 내가 무엇을 실수했는지 고민해봐야겠다.
