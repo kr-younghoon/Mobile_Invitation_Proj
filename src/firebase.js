@@ -2,14 +2,13 @@ import { initializeApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore'; // Import Firestore from Firebase modular SDK
 
 const firebaseConfig = {
-    apiKey: process.env.REACT_APP_apiKey,
-    authDomain: process.env.REACT_APP_authDomain,
-    projectId: process.env.REACT_APP_projectId,
-    storageBucket: process.env.REACT_APP_storageBucket,
-    messagingSenderId: process.env.REACT_APP_messagingSenderId,
-    appId: process.env.REACT_APP_appId,
-    measurementId: process.env.REACT_APP_measurementId,
-    databaseURL: process.env.REACT_APP_databaseURL,
+    apiKey: 'AIzaSyD71fdJORDikBgInvsHgrA2uSj1Z03Y1ac',
+    authDomain: 'side-project-ayoung.firebaseapp.com',
+    projectId: 'side-project-ayoung',
+    storageBucket: 'side-project-ayoung.appspot.com',
+    messagingSenderId: '606367920386',
+    appId: '1:606367920386:web:ec928f13d180ecd1a0d21b',
+    measurementId: 'G-7EYW57RLXM',
 };
 
 const app = initializeApp(firebaseConfig); // Initialize the app
